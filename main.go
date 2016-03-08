@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/MJKWoolnough/engine"
-	_ "github.com/MJKWoolnough/engine/glfw31_gl21"
+	_ "github.com/MJKWoolnough/engine/graphics/glfw31_gl21"
 )
 
 func run(width, height int, time float64) bool {
