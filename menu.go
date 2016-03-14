@@ -3,7 +3,7 @@ package main
 type Menu struct {
 	items          []MenuItem
 	selected       int
-	top, left, gap int
+	top, left, gap float64
 }
 
 type MenuItem struct {
@@ -11,10 +11,14 @@ type MenuItem struct {
 	Func func()
 }
 
-func (m *Menu) Mouseover(x, y int) {
-	x -= left
-	y -= top
+func (m *Menu) Mouseover(x, y float64) {
+	//x -= left
+	//y -= top
 	// determine button over and set
+}
+
+func (m *Menu) Mouseout() {
+	m.selected = -1
 }
 
 func (m *Menu) Next() {
@@ -32,8 +36,8 @@ func (m *Menu) Prev() {
 }
 
 func (m *Menu) Select() {
-	if over >= 0 {
-		m.items[m.over].Func()
+	if m.selected >= 0 {
+		m.items[m.selected].Func()
 	}
 	return nil
 }
