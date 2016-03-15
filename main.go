@@ -13,7 +13,9 @@ func run(width, height int, time float64) bool {
 		Angle: time,
 	}
 	t.Angle = time
-	t.Render(width, height, time)
+	StartRender(width, height)
+	t.Render(time)
+	FinishRender(time)
 	if engine.KeyPressed(engine.KeyEscape) {
 		return false
 	}
