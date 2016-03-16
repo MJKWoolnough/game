@@ -1,9 +1,9 @@
 package main
 
 type Menu struct {
-	items          []MenuItem
-	selected       int
-	top, left, gap float64
+	items                         []MenuItem
+	selected                      int
+	top, left, gap, width, height float64
 }
 
 type MenuItem struct {
@@ -39,5 +39,4 @@ func (m *Menu) Select() {
 	if m.selected >= 0 {
 		m.items[m.selected].Func()
 	}
-	return nil
 }
