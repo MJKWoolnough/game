@@ -8,6 +8,18 @@ import (
 	_ "github.com/MJKWoolnough/engine/graphics/glfw31_gl21"
 )
 
+var mainMenu = Menu{
+	items: []MenuItem{
+		{"Item 1", func() {}},
+		{"Item 2", func() {}},
+	},
+	top:    0.1,
+	left:   0.1,
+	gap:    0.1,
+	width:  0.8,
+	height: 0.05,
+}
+
 func run(width, height int, time float64) bool {
 	t := triangle{
 		Angle: time,
@@ -15,6 +27,7 @@ func run(width, height int, time float64) bool {
 	t.Angle = time
 	StartRender(width, height)
 	t.Render(time)
+	mainMenu.Render(time)
 	FinishRender(time)
 	if engine.KeyPressed(engine.KeyEscape) {
 		return false
