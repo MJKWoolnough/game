@@ -3,24 +3,31 @@ package main
 import (
 	"fmt"
 	"os"
+	"sync"
 
 	"github.com/MJKWoolnough/engine"
 	_ "github.com/MJKWoolnough/engine/graphics/glfw31_gl21"
 )
 
-var mainMenu = Menu{
-	items: []MenuItem{
-		{"Item 1", func() {}},
-		{"Item 2", func() {}},
-	},
-	top:    0.1,
-	left:   0.1,
-	gap:    0.1,
-	width:  0.8,
-	height: 0.05,
-}
+var (
+	mainMenu = Menu{
+		items: []MenuItem{
+			{"Item 1", func() {}},
+			{"Item 2", func() {}},
+		},
+		top:    0.1,
+		left:   0.1,
+		gap:    0.1,
+		width:  0.8,
+		height: 0.05,
+	}
+	allInit sync.Once
+)
 
 func run(width, height int, time float64) bool {
+	allInit.Do(func() {
+		menuFontInit()
+	})
 	t := triangle{
 		Angle: time,
 	}
