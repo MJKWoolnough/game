@@ -1,4 +1,4 @@
-package toml
+package toml // import "vimagination.zapto.org/game/vendor/github.com/BurntSushi/toml"
 
 import (
 	"fmt"

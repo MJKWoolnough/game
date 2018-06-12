@@ -1,12 +1,12 @@
-package main
+package main // import "vimagination.zapto.org/game"
 
 import (
 	"fmt"
 	"os"
 	"sync"
 
-	"github.com/MJKWoolnough/engine"
-	_ "github.com/MJKWoolnough/engine/graphics/glfw31_gl21"
+	"vimagination.zapto.org/engine"
+	_ "vimagination.zapto.org/engine/graphics/glfw31_gl21"
 )
 
 var (

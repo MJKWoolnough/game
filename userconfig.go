@@ -4,7 +4,7 @@ import (
 	"io"
 
 	"github.com/BurntSushi/toml"
-	"github.com/MJKWoolnough/engine"
+	"vimagination.zapto.org/engine"
 )
 
 type UserConfig struct {
